@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ray-Ban - Ótica Elegance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="produto.css" />
+</head>
+<body>
+  <header class="cart-bar">
+    <span>Carrinho: <span id="cart-count">0</span> item(s)</span>
+    <span>Total: R$ <span id="cart-total">0.00</span></span>
+    <a href="carrinho.html" class="btn-primary">🛒 Ver Carrinho</a>
+  </header>
+
+  <main class="product-container">
+    <div class="product-image">
+      <img src="images/foto29.png" alt="Óculos Ray-Ban" />
+    </div>
+    <div class="product-details">
+      <h1>Ray-Ban</h1>
+      <p class="price">R$ 199,90</p>
+      <p class="description">
+        Os óculos Ray-Ban oferecem design icônico, alta qualidade e proteção para seus olhos, combinando estilo e conforto para qualquer ocasião.
+      </p>
+      <ul class="features">
+        <li>Armação leve e resistente</li>
+        <li>Lentes com proteção UV</li>
+        <li>Design clássico e atemporal</li>
+        <li>Garantia de 2 anos</li>
+      </ul>
+
+      <div class="quantity-container">
+        <label for="quantidade">Quantidade:</label>
+        <div class="quantity-controls">
+          <button type="button" id="decrement">-</button>
+          <input type="number" id="quantidade" value="1" min="1" />
+          <button type="button" id="increment">+</button>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('increment').addEventListener('click', () => {
+      const input = document.getElementById('quantidade');
+      input.value = parseInt(input.value) + 1;
+    });
+
+    document.getElementById('decrement').addEventListener('click', () => {
+      const input = document.getElementById('quantidade');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
